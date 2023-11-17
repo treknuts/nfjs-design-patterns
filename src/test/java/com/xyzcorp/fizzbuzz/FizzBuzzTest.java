@@ -18,26 +18,31 @@ public class FizzBuzzTest {
 
     @Test
     void testFizzBuzzOne() {
-
+        String result = FizzBuzz.convert(1);
+        assertThat(result).isEqualTo("1");
     }
 
     @Test
     void testFizzBuzzTwo() {
-
+        String result = FizzBuzz.convert(2);
+        assertThat(result).isEqualTo("2");
     }
 
     @Test
     void testFizzBuzzThree() {
-
+        String result = FizzBuzz.convert(3);
+        assertThat(result).isEqualTo("Fizz");
     }
 
     @Test
     void testFizzBuzzFive() {
-
+        String result = FizzBuzz.convert(5);
+        assertThat(result).isEqualTo("Buzz");
     }
 
     @Test
     void testFizzBuzzFifteen() {
-        app.do_it(15);
+        String result = FizzBuzz.convert(15);
+        assertThat(result).isEqualTo("FizzBuzz");
     }
 }
