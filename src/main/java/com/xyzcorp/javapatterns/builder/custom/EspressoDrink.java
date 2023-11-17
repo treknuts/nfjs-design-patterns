@@ -7,14 +7,14 @@ package com.xyzcorp.javapatterns.builder.custom;
  */
 public class EspressoDrink {
     private int shots;
-    private boolean skimMilk;
+    private Dairy dairy;
     private boolean sprinkles;
     private boolean decaf;
     private boolean whip;
 
     protected EspressoDrink(EspressoDrinkBuilder espressoDrinkBuilder) {
         this.shots = espressoDrinkBuilder.getShots();
-        this.skimMilk = espressoDrinkBuilder.isSkimMilk();
+        this.dairy = espressoDrinkBuilder.addDairy(espressoDrinkBuilder.dairy()).dairy();
         this.sprinkles = espressoDrinkBuilder.isSprinkles();
         this.decaf = espressoDrinkBuilder.isDecaf();
         this.whip = espressoDrinkBuilder.isWhip();
@@ -24,11 +24,15 @@ public class EspressoDrink {
     public String toString() {
         final StringBuffer sb = new StringBuffer("EspressoDrink{");
         sb.append("shots=").append(shots);
-        sb.append(", skimMilk=").append(skimMilk);
+        sb.append(", dairy_type=").append(dairy);
         sb.append(", sprinkles=").append(sprinkles);
         sb.append(", decaf=").append(decaf);
         sb.append(", whip=").append(whip);
         sb.append('}');
         return sb.toString();
+    }
+
+    public static EspressoDrinkBuilder addShots(int i) {
+        return new EspressoDrinkBuilder(i);
     }
 }

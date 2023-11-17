@@ -10,7 +10,7 @@ public class EspressoDrinkBuilder {
     private boolean decaf;
     private boolean whip;
     private boolean sprinkles;
-    private boolean skimMilk;
+    private Dairy dairy;
     private int shots;
 
     public EspressoDrinkBuilder(int shots) {
@@ -27,8 +27,8 @@ public class EspressoDrinkBuilder {
         return this;
     }
 
-    public EspressoDrinkBuilder addSkimMilk() {
-        this.skimMilk = true;
+    public EspressoDrinkBuilder addDairy(Dairy dairy) {
+        this.dairy = dairy;
         return this;
     }
 
@@ -53,8 +53,8 @@ public class EspressoDrinkBuilder {
         return sprinkles;
     }
 
-    public boolean isSkimMilk() {
-        return skimMilk;
+    public Dairy dairy() {
+        return this.dairy;
     }
 
     public int getShots() {
