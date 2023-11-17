@@ -1,5 +1,7 @@
 package com.xyzcorp.fizzbuzz;
 
+import java.util.stream.IntStream;
+
 public class FizzBuzz {
 
     public static String convert(Integer n) {
@@ -15,10 +17,8 @@ public class FizzBuzz {
     }
 
     // Do fizz_buzz up to n
-    public static void run(Integer n) {
-        for (int i = 1; i <= n; i++) {
-            System.out.println(convert(i));
-        }
+    public static void main(String[] args) {
+        IntStream.rangeClosed(1, 100).boxed().map(FizzBuzz::convert).forEach(System.out::println);
     }
 
 }

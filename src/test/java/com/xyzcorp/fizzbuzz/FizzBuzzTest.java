@@ -14,7 +14,6 @@ public class FizzBuzzTest {
     //Interface
     //Exceptions
     //Simplicity
-    FizzBuzz app = new FizzBuzz();
 
     @Test
     void testFizzBuzzOne() {
@@ -37,6 +36,18 @@ public class FizzBuzzTest {
     @Test
     void testFizzBuzzFive() {
         String result = FizzBuzz.convert(5);
+        assertThat(result).isEqualTo("Buzz");
+    }
+
+    @Test
+    void testFizzBuzzSix() {
+        String result = FizzBuzz.convert(6);
+        assertThat(result).isEqualTo("Fizz");
+    }
+
+    @Test
+    void testFizzBuzzTen() {
+        String result = FizzBuzz.convert(10);
         assertThat(result).isEqualTo("Buzz");
     }
 
