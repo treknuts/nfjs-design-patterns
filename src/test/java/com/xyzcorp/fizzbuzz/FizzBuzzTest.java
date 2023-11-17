@@ -14,6 +14,7 @@ public class FizzBuzzTest {
     //Interface
     //Exceptions
     //Simplicity
+    FizzBuzz app = new FizzBuzz();
 
     @Test
     void testFizzBuzzOne() {
@@ -37,6 +38,6 @@ public class FizzBuzzTest {
 
     @Test
     void testFizzBuzzFifteen() {
-
+        app.do_it(15);
     }
 }
