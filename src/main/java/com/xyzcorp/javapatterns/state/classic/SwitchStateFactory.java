@@ -42,4 +42,12 @@ public class SwitchStateFactory {
         }
         return offState;
     }
+
+    public static void main(String[] args) {
+        SwitchStateContext context = new SwitchStateContext();
+        SwitchStateFactory factory = new SwitchStateFactory(context);
+        var onState = factory.getOnState();
+        onState.execute();
+        System.out.println(context.getSwitchState());
+    }
 }
